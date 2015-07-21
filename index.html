@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Node-odoo by 4yopping</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Node-odoo</h1>
+        <p>Node.js client library for Odoo using JSON-RPC</p>
+        <p class="view"><a href="https://github.com/4yopping/node-odoo">View the Project on GitHub <small>4yopping/node-odoo</small></a></p>
+        <ul>
+          <li><a href="https://github.com/4yopping/node-odoo/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/4yopping/node-odoo/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/4yopping/node-odoo">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="node-odoo" class="anchor" href="#node-odoo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Node-Odoo</h1>
+
+<p>Node.js client library for Odoo using JSON-RPC</p>
+
+<h2>
+<a id="node-version" class="anchor" href="#node-version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Node version</h2>
+
+<p>Works better with NodeJS v11.16 and further</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<div class="highlight highlight-bash"><pre>$ npm install node-odoo</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> Odoo <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>node-odoo<span class="pl-pds">'</span></span>);
+
+<span class="pl-k">var</span> odoo <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Odoo</span>({
+  host<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>localhost<span class="pl-pds">'</span></span>,
+  port<span class="pl-k">:</span> <span class="pl-c1">4569</span>,
+  database<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>4yopping<span class="pl-pds">'</span></span>,
+  username<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>admin<span class="pl-pds">'</span></span>,
+  password<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>4yopping<span class="pl-pds">'</span></span>
+});
+
+<span class="pl-c">// Connect to Odoo</span>
+odoo.connect(<span class="pl-k">function</span> (<span class="pl-smi">err</span>) {
+  <span class="pl-k">if</span> (err) { <span class="pl-k">return</span> <span class="pl-en">console</span><span class="pl-c1">.log</span>(err); }
+
+  <span class="pl-c">// Get a partner</span>
+  odoo.get(<span class="pl-s"><span class="pl-pds">'</span>res.partner<span class="pl-pds">'</span></span>, <span class="pl-c1">4</span>, <span class="pl-k">function</span> (<span class="pl-smi">err</span>, <span class="pl-smi">partner</span>) {
+    <span class="pl-k">if</span> (err) { <span class="pl-k">return</span> <span class="pl-en">console</span><span class="pl-c1">.log</span>(err); }
+
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Partner<span class="pl-pds">'</span></span>, partner);
+  });
+});</pre></div>
+
+<h2>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h2>
+
+<h3>
+<a id="odooconnectcallback" class="anchor" href="#odooconnectcallback" aria-hidden="true"><span class="octicon octicon-link"></span></a>odoo.connect(callback)</h3>
+
+<h3>
+<a id="odoocreatemodel-params-callback" class="anchor" href="#odoocreatemodel-params-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>odoo.create(model, params, callback)</h3>
+
+<h3>
+<a id="odoogetmodel-id-callback" class="anchor" href="#odoogetmodel-id-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>odoo.get(model, id, callback)</h3>
+
+<h3>
+<a id="odooupdatemodel-id-params-callback" class="anchor" href="#odooupdatemodel-id-params-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>odoo.update(model, id, params, callback)</h3>
+
+<h3>
+<a id="odoodeletemodel-id-callback" class="anchor" href="#odoodeletemodel-id-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>odoo.delete(model, id, callback)</h3>
+
+<h3>
+<a id="odoosearchmodel-params-callback" class="anchor" href="#odoosearchmodel-params-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>odoo.search(model, params, callback)</h3>
+
+<h2>
+<a id="reference" class="anchor" href="#reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reference</h2>
+
+<ul>
+<li><a href="https://www.odoo.com/documentation/8.0">Odoo Technical Documentation</a></li>
+<li><a href="https://www.odoo.com/documentation/8.0/api_integration.html">Odoo Web Service API</a></li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>The MIT License (MIT)</p>
+
+<p>Copyright (c) 2015 Marco Godínez, 4yopping and all the related trademarks</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/4yopping">4yopping</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
