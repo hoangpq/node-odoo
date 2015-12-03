@@ -1,4 +1,5 @@
 # Node-Odoo
+![Dependencies](https://david-dm.org/4yopping/node-odoo.svg)
 
 Node.js client library for Odoo using JSON-RPC
 
