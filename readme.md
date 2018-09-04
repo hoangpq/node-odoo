@@ -52,7 +52,8 @@ odoo.connect(function (err) {
 * [Odoo Technical Documentation](https://www.odoo.com/documentation/8.0)
 * [Odoo Web Service API](https://www.odoo.com/documentation/8.0/api_integration.html)
 
-[![GitHub followers]
+[![GitHub forks](https://img.shields.io/github/forks/Naereen/StrapDown.js.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/Naereen/StrapDown.js/network/)
+
 
 ## License
 
