@@ -1,5 +1,8 @@
 # Node-Odoo
 ![Dependencies](https://david-dm.org/4yopping/node-odoo.svg)
+[![GitHub forks](https://img.shields.io/github/forks/Naereen/StrapDown.js.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/Naereen/StrapDown.js/network/)
+[![GitHub contributors](https://img.shields.io/github/contributors/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/contributors/)
+[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 Node.js client library for Odoo using JSON-RPC
 
@@ -53,7 +56,7 @@ odoo.connect(function (err) {
 * [Odoo Web Service API](https://www.odoo.com/documentation/8.0/api_integration.html)
 
 ## License
-
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 The MIT License (MIT)
 
 Copyright (c) 2015 Marco Godínez, 4yopping and all the related trademarks
